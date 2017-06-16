@@ -1,5 +1,6 @@
 require_relative '../db/sql_runner'
 require_relative 'flight'
+require 'pry-byebug'
 
 class Deal
   attr_reader :name#, :day_id, :price_mod
@@ -21,3 +22,6 @@ class Deal
     @id = result.first()['id'].to_i
   end
 end
+
+binding.pry
+nil

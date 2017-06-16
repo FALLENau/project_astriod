@@ -11,10 +11,11 @@ get "/" do
   erb(:index)
 end
 
-#NEW = get form to apply user to deal + price_mod
-get "/new" do
+#BOOK = get form to apply user to deal + price_mod
+get "/book_new" do
   @ship = Ship.all()
   erb(:new)
+    #should it be book_new? book seams more descriptive with flights.
 end #have to reteive data from deal to auto fill some of form.
 
 

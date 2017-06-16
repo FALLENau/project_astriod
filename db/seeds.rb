@@ -1,3 +1,4 @@
+require 'pry-byebug'
 require_relative '../models/deal'
 require_relative '../models/flight'
 require_relative '../models/ship'
@@ -32,5 +33,5 @@ deal2.save()
 deal3.save()
 deal4.save()
 
-# binding.pry
-# nil
+binding.pry
+nil

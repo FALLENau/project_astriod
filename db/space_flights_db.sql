@@ -1,3 +1,4 @@
+-- db name: space_flights_db
 DROP TABLE flight_deals;
 DROP TABLE deals;
 DROP TABLE flights;
