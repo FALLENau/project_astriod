@@ -3,13 +3,20 @@ DROP TABLE flight_deals;
 DROP TABLE deals;
 DROP TABLE flights;
 DROP TABLE ships;
--- droping days table for now
+DROP TABLE days;
+
+
+CREATE TABLE days (
+id SERIAL8 PRIMARY KEY,
+name VARCHAR(255)
+);
 
 CREATE TABLE ships
 (
 id SERIAL8 PRIMARY KEY,
 name VARCHAR(255),
-url VARCHAR(255)
+url VARCHAR(255),
+company VARCHAR(255)
 );
 
 CREATE TABLE flights

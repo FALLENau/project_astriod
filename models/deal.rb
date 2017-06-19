@@ -1,5 +1,6 @@
 require_relative '../db/sql_runner'
 require_relative 'flight'
+require_relative 'day'
 require 'pry-byebug'
 
 class Deal
@@ -21,28 +22,33 @@ class Deal
     result = SqlRunner.run(sql)
     @id = result.first()['id'].to_i
   end
-end
 
-def flight
-  sql = "SELECT * FROM flights
-  WHERE id = #{@flight_id}"
-  flight_hash = SqlRunner.run(sql).first
-  return Flight.new(flight_hash)
-end
 
-def self.all()
-  sql = "SELECT * FROM deals"
-  deals_hash = SqlRunner.run(sql)
-  result = deals_hash.map {|deal| Deal.new(deal)}
-  return result
-end
+  def flight
+    sql = "SELECT * FROM flights
+    WHERE id = #{@flight_id}"
+    flight_hash = SqlRunner.run(sql).first
+    return Flight.new(flight_hash)
+  end
 
-def self.find(id)
-  sql = "SELECT * FROM deals WHERE id=#{id}"
-  deal = SqlRunner.run(sql)
-  result = Deal.new(deal.first)
+  def self.all()
+    sql = "SELECT * FROM deals"
+    deals_hash = SqlRunner.run(sql)
+    result = deals_hash.map {|deal| Deal.new(deal)}
+    return result
+  end
 
-  return result
+  def self.find(id)
+    sql = "SELECT * FROM deals WHERE id=#{id}"
+    deal = SqlRunner.run(sql)
+    result = Deal.new(deal.first)
+    return result
+  end
+
+  def Deal.delete_all()
+    sql = "DELETE FROM deals"
+    SqlRunner.run(sql)
+  end
 end
 
 # binding.pry

@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'sinatra/contrib/all'
-require_relative '/controllers/deals_controller.rb'
-require_relative '/controllers/flights_controller.rb'
-require_relative '/controllers/ships_controller.rb'
+require_relative 'controllers/deals_controller.rb'
+require_relative 'controllers/flights_controller.rb'
+require_relative 'controllers/ships_controller.rb'
 
 get '/' do
   erb(:index)

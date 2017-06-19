@@ -2,11 +2,34 @@
 require_relative '../models/deal'
 require_relative '../models/flight'
 require_relative '../models/ship'
+require_relative '../models/day'
 
-ship1 = Ship.new({ 'name' => 'name here', 'url' => 'http' })
-ship2 = Ship.new({ 'name' => 'name here', 'url' => 'http' })
-ship3 = Ship.new({ 'name' => 'name here', 'url' => 'http' })
-ship4 = Ship.new({ 'name' => 'name here', 'url' => 'http' })
+# binding.pry
+Day.delete_all()
+Ship.delete_all()
+Flight.delete_all()
+Deal.delete_all()
+
+day1 = Day.new({'name' => 'Monday'})
+day2 = Day.new({'name' => 'Tuesday'})
+day3 = Day.new({'name' => 'Wednesday'})
+day4 = Day.new({'name' => 'Thursday'})
+day5 = Day.new({'name' => 'Friday'})
+day6 = Day.new({'name' => 'Saturday'})
+day7 = Day.new({'name' => 'Sunday'})
+
+day1.save()
+day2.save()
+day3.save()
+day4.save()
+day5.save()
+day6.save()
+day7.save()
+
+ship1 = Ship.new({ 'name' => 'Lynx', 'url' => 'http', 'company' => 'XCOR Aerospace' })
+ship2 = Ship.new({ 'name' => 'SpaceShipTwo', 'url' => 'http', 'company' => 'Virgin Galactic'  })
+ship3 = Ship.new({ 'name' => 'Armadillo', 'url' => 'http', 'company' => 'Aerospace'  })
+ship4 = Ship.new({ 'name' => 'Air-Launched Rocket', 'url' => 'http', 'company' => 'Stratolaunch Systems'  })
 
 ship1.save()
 ship2.save()
