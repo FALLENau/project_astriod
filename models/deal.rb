@@ -4,20 +4,22 @@ require_relative 'day'
 require 'pry-byebug'
 
 class Deal
-  attr_reader :id, :name#, :day_id, :price_mod
+  attr_reader :id, :name, :day_id#, :price_mod
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    #@day_id = options['day_id'].to_i
+    @day_id = options['day_id'].to_i
+    @flight_id = options['flight_id'].to_i
     #@price_mod = options['price_mod'].to_i
   end
 
   def save
     sql = "INSERT INTO deals (
-    name
+    name,
+    flight_id, day_id
     ) VALUES (
-    '#{name}'
+    '#{@name}', #{@flight_id}, #{@day_id}
     ) RETURNING id"
     result = SqlRunner.run(sql)
     @id = result.first()['id'].to_i
@@ -35,6 +37,14 @@ class Deal
       ship: Ship.new(ship_hash),
       flight: Flight.new(ship_hash)
     }
+  end
+
+  def day
+    sql = "SELECT * FROM days
+    WHERE id = #{@day_id}"
+    day_hash = SqlRunner.run(sql).first
+    return Day.new(day_hash)
+
   end
 
   def self.all()
