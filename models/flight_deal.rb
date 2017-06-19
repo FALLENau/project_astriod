@@ -22,6 +22,10 @@ class FlightDeal
       @id = result.first()['id'].to_i
     end
 
+    def FlightDeal.delete_all()
+      sql = "DELETE FROM flight_deals"
+      SqlRunner.run(sql)
+    end
 
 
 end

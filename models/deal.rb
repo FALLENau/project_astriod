@@ -24,22 +24,17 @@ class Deal
   end
 
 
-  def flight
-    sql = "SELECT * FROM flights
-    INNER JOIN flight_deals
-    ON flight_deals.flight_id = flights.id"
-    flight_hash = SqlRunner.run(sql).first
-    return Flight.new(flight_hash)
-  end
-
-  def ship
+  def all_details
     sql = "SELECT * FROM ships
     INNER JOIN flights
     ON ships.id = flights.ship_id
     INNER JOIN flight_deals
     ON flight_deals.flight_id = flights.id"
     ship_hash = SqlRunner.run(sql).first
-    return Ship.new(ship_hash)
+    return {
+      ship: Ship.new(ship_hash),
+      flight: Flight.new(ship_hash)
+    }
   end
 
   def self.all()

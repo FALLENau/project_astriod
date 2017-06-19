@@ -30,7 +30,8 @@ ship_id INT8 REFERENCES ships(id)
 CREATE TABLE deals
 (
 id SERIAL8 PRIMARY KEY,
-name VARCHAR(255)--,
+name VARCHAR(255),
+flight_id INT8 REFERENCES flights(id)--,
 -- price_mod NUMERIC
 -- day_id INT8 REFERENCES days(id)
 );
