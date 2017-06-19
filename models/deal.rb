@@ -23,5 +23,27 @@ class Deal
   end
 end
 
+def flight
+  sql = "SELECT * FROM flights
+  WHERE id = #{@flight_id}"
+  flight_hash = SqlRunner.run(sql).first
+  return Flight.new(flight_hash)
+end
+
+def self.all()
+  sql = "SELECT * FROM deals"
+  deals_hash = SqlRunner.run(sql)
+  result = deals_hash.map {|deal| Deal.new(deal)}
+  return result
+end
+
+def self.find(id)
+  sql = "SELECT * FROM deals WHERE id=#{id}"
+  deal = SqlRunner.run(sql)
+  result = Deal.new(deal.first)
+
+  return result
+end
+
 # binding.pry
 # nil
