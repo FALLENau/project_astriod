@@ -3,19 +3,20 @@ require_relative 'deal'
 require 'pry-byebug'
 
 class Flight
-  attr_reader :price, :time
+  attr_reader :id, :price, :time
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @price = options['price'].to_i
     @time = options['time'].to_i
+    @ship_id = options['ship_id'].to_i
   end
 
   def save
     sql = "INSERT INTO flights (
-    price, time
+    price, time, ship_id
     ) VALUES (
-    #{price}, #{time}
+    #{price}, #{time}, #{@ship_id}
     ) RETURNING id"
     result = SqlRunner.run(sql)
     @id = result.first()['id'].to_i

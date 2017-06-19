@@ -3,7 +3,7 @@ require_relative '../db/sql_runner'
 require 'pry-byebug'
 
 class Ship
-  attr_reader :name, :url, :company
+  attr_reader :id, :name, :url, :company
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

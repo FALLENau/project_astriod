@@ -4,7 +4,7 @@ require_relative 'day'
 require 'pry-byebug'
 
 class Deal
-  attr_reader :name#, :day_id, :price_mod
+  attr_reader :id, :name#, :day_id, :price_mod
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -26,9 +26,20 @@ class Deal
 
   def flight
     sql = "SELECT * FROM flights
-    WHERE id = #{@flight_id}"
+    INNER JOIN flight_deals
+    ON flight_deals.flight_id = flights.id"
     flight_hash = SqlRunner.run(sql).first
     return Flight.new(flight_hash)
+  end
+
+  def ship
+    sql = "SELECT * FROM ships
+    INNER JOIN flights
+    ON ships.id = flights.ship_id
+    INNER JOIN flight_deals
+    ON flight_deals.flight_id = flights.id"
+    ship_hash = SqlRunner.run(sql).first
+    return Ship.new(ship_hash)
   end
 
   def self.all()

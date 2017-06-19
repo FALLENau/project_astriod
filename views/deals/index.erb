@@ -1,0 +1,8 @@
+<h1>Deals</h1>
+
+<% @deals.each do |deal| %>
+  <p>Name: <%= deal.name() %></p>
+  <p>Ship: <%= deal.ship.name() %></p>
+  <p>Flight Time: <%= deal.flight.price() %></p>
+  <hr>
+<% end %>
