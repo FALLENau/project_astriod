@@ -10,16 +10,14 @@ class Deal
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @day_id = options['day_id'].to_i
-    @flight_id = options['flight_id'].to_i
     #@price_mod = options['price_mod'].to_i
   end
 
   def save
     sql = "INSERT INTO deals (
-    name,
-    flight_id, day_id
+    name, day_id
     ) VALUES (
-    '#{@name}', #{@flight_id}, #{@day_id}
+    '#{@name}', #{@day_id}
     ) RETURNING id"
     result = SqlRunner.run(sql)
     @id = result.first()['id'].to_i

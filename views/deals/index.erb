@@ -4,7 +4,7 @@
   <p>Deal: <%= deal.name() %></p>
   <p>Space Craft: <%= deal.all_details()[:ship].name %></p>
   <p>flight launch: <%= deal.all_details()[:flight].time %></p>
-  <p>flight launch: <%= deal.all_details()[:ship].url %></p>
+  <p><%= deal.all_details()[:ship].url %></p>
   <p>Total cost: <%= deal.all_details()[:flight].price %></p>
   <p>Day: <%= deal.day().name %></p>
   <hr>

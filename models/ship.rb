@@ -22,6 +22,12 @@ class Ship
     @id = result.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM ships"
+    ships_hash = SqlRunner.run(sql)
+    result = ships_hash.map {|ship| Ship.new(ship)}
+    return result
+  end
 
   def Ship.delete_all()
     sql = "DELETE FROM ships"

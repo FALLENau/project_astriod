@@ -33,7 +33,7 @@ class Flight
   def self.all()
     sql = "SELECT * FROM flights"
     flights_hash = SqlRunner.run(sql)
-    result = flights_hash.map {|flight| Flight.new(fliight)}
+    result = flights_hash.map {|flight| Flight.new(flight)}
     return result
   end
 

@@ -12,14 +12,16 @@ get "/" do
   erb(:"deals/index")
 end
 
-# #NEW = gets info from making new deal for admin
-# get "/new" do
-#   @deals = Deal.all
-#   erb(:new)
-# end
-#
-# #CREATE = create new deal by admin
-# post "/newdeal" do
-#   Deal.new(params).save()
-#   erb(:create)
-# end
+#NEW = gets info from making new deal for admin
+get "/new" do
+  @days = Day.all
+  @ships = Ship.all
+  @flights = Flight.all
+  erb(:"deals/new")
+end
+
+#CREATE = create new deal by admin
+post "/deal" do
+  Deal.new(params).save()
+  redirect to('/')
+end
