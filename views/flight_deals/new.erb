@@ -1,20 +1,17 @@
 <form method="post" action="/flight_deals">
-
-  <label for="name-of-deal">Deal Name:</label>
-  <input id="name-of-deal" type="text" name="name">
-
-
-  <label for="ship-select">Ship:</label>
-  <select id="ship-select" name="ship_id">
-    <% @ships.each do |ship| %>
-      <option value=<%= ship.id %>><%= ship.name.capitalize%></option>
-      <% end %>
-  </select>
-  <select id="day-select" name="day_id">
-    <% @days.each do |day| %>
-      <option value=<%= day.id %>><%= day.name.capitalize%></option>
-      <% end %>
+  <label for="flight-select">Flight:</label>
+  <select id="flight-select" name="flight_id">
+    <% @flights.each do |flight| %>
+      <option value=<%= flight.id %>>time: <%= flight.time %> £<%= flight.price %></option>
+    <% end %>
   </select>
 
-  <input type="submit" value="Submit New Deal">
+  <label for="deal-selecet">Deal:</label>
+  <select id="deal-select" name="deal_id">
+    <% @deals.each do |deal| %>
+      <option value=<%= deal.id %>><%= deal.name.capitalize%></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Submit">
 </form>

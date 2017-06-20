@@ -14,7 +14,6 @@ get "/" do
 end
 
 
-
 #NEW = gets info from making new deal for admin
 get "/new" do
   @days = Day.all
