@@ -8,30 +8,29 @@ require_relative '../models/day.rb'
 
 # index
 get '/flights' do
-  @flight = Flight.all()
+  @flights = Flight.all()
   erb(:'flights/index')
 end
-#
+
 # # show
-# '/flights/:id'
+# get '/flights/:id' do
+#
+# end
 #
 # # show deals for particular flight
 # `/flights/:id/deals`
-#
-# # add a new deal to a particular flight
-# '/flights/:id/deals/new'
-#
-#
-# #NEW = gets info from making new deal for admin
-# get "/new" do
-#   @days = Day.all
-#   @ships = Ship.all
-#   @flights = Flight.all
-#   erb(:"deals/new")
-# end
-#
-# #CREATE = create new deal by admin
-# post "/deal" do
-#   Deal.new(params).save()
-#   redirect to('/')
-# end
+
+# add a new deal to a particular flight
+get '/flights/new' do
+  @days = Day.all
+  @ships = Ship.all
+  @flights = Flight.all
+  erb(:"flights/newdeal")
+end
+
+#CREATE
+post '/flights' do
+  flight = Flight.new(params)
+  flight.save()
+  redirect to ('/flights')
+end

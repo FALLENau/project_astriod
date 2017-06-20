@@ -24,17 +24,19 @@ class Deal
   end
 
 
-  def all_details
+  def self.all_details
     sql = "SELECT * FROM ships
     INNER JOIN flights
     ON ships.id = flights.ship_id
     INNER JOIN flight_deals
     ON flight_deals.flight_id = flights.id"
-    ship_hash = SqlRunner.run(sql).first
-    return {
-      ship: Ship.new(ship_hash),
-      flight: Flight.new(ship_hash)
+    trip_array = SqlRunner.run(sql).map do |trip|
+      {
+      ship: Ship.new(trip),
+      flight: Flight.new(trip)
     }
+    end
+    return trip_array
   end
 
   def day

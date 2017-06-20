@@ -22,6 +22,13 @@ class FlightDeal
       @id = result.first()['id'].to_i
     end
 
+    def self.all()
+      sql = "SELECT * FROM flight_deals"
+      flight_deals_hash = SqlRunner.run(sql)
+      result = flight_deals_hash.map {|flight_deal| FlightDeal.new(flight_deal)}
+      return result
+    end
+
     def FlightDeal.delete_all()
       sql = "DELETE FROM flight_deals"
       SqlRunner.run(sql)

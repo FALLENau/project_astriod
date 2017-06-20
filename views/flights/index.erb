@@ -1,2 +1,12 @@
 <!-- Saved flights -->
-<h1>Booked Flights</h1>
+<h1>FLights</h1>
+
+
+<% @flights.each do |flight| %>
+  <div class="content">
+    <p>Flight ID: <%= flight.id() %></p>
+    <p>Cost: <%= flight.price() %></p>
+    <p>Time: <%= flight.time() %></p>
+    <hr>
+  </div>
+<% end %>

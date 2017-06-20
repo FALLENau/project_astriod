@@ -1,0 +1,10 @@
+<h1>Ships</h1>
+
+
+<% @ships.each do |ship| %>
+  <div class="content">
+    <p>Space Craft: <%= ship.name() %></p>
+    <p><img class="SpaceShips" src="<%= ship.url %>" alt=""></p>
+    <hr>
+  </div>
+<% end %>

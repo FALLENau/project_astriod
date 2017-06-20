@@ -28,9 +28,9 @@ saturday.save()
 sunday.save()
 
 ship1 = Ship.new({ 'name' => 'Lynx', 'url' => '/images/1.jpg', 'company' => 'XCOR Aerospace' })
-ship2 = Ship.new({ 'name' => 'SpaceShipTwo', '/images/2.jpg' => 'http', 'company' => 'Virgin Galactic'  })
-ship3 = Ship.new({ 'name' => 'Armadillo', '/images/3.jpg' => 'http', 'company' => 'Aerospace'  })
-ship4 = Ship.new({ 'name' => 'Air-Launched Rocket', '/images/4.jpg' => 'http', 'company' => 'Stratolaunch Systems'  })
+ship2 = Ship.new({ 'name' => 'SpaceShipTwo', 'url' => '/images/2.jpg', 'company' => 'Virgin Galactic'  })
+ship3 = Ship.new({ 'name' => 'Armadillo', 'url' => '/images/3.jpg', 'company' => 'Aerospace'  })
+ship4 = Ship.new({ 'name' => 'Air-Launched Rocket', 'url' => '/images/4.jpg', 'company' => 'Stratolaunch Systems'  })
 
 ship1.save()
 ship2.save()
