@@ -2,6 +2,7 @@ body {
   background: black url('/images/background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
+
   color: orange;
 }
 
@@ -16,4 +17,10 @@ a:hover {
 
 p {
   flex:auto;
+}
+
+
+.SpaceShips {
+  max-width: 400px;
+  max-height: 400px;
 }
