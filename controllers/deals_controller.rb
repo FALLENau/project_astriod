@@ -23,12 +23,11 @@ get "/deals/new" do
   @deals = Deal.all
   @days = Day.all
   @ships = Ship.all
-  @flights = Flight.all
   erb(:"deals/new")
 end
 
 #CREATE = create new deal by admin
-post "/deal" do
+post "/deals" do #note: changed /deal to /deals
   Deal.new(params).save()
   redirect to('/')
 end

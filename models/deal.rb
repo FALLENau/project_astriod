@@ -1,6 +1,7 @@
 require_relative '../db/sql_runner'
 require_relative 'flight'
 require_relative 'day'
+require_relative 'ship'
 require 'pry-byebug'
 
 class Deal
