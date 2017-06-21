@@ -12,20 +12,12 @@ get '/flights' do
   erb(:'flights/index')
 end
 
-# # show
-# get '/flights/:id' do
-#
-# end
-#
-# # show deals for particular flight
-# `/flights/:id/deals`
-
 # add a new deal to a particular flight
 get '/flights/new' do
   @days = Day.all
   @ships = Ship.all
   @flights = Flight.all
-  erb(:"flights/newdeal")
+  erb(:"flights/new")
 end
 
 #CREATE

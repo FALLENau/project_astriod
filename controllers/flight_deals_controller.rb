@@ -23,6 +23,7 @@ get "/flight_deals/new" do
   erb(:"flight_deals/new")
 end
 
+#CREATE
 post "/flight_deals" do
   FlightDeal.new(params).save()
   redirect to "/flight_deals"
