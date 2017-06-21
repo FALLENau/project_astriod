@@ -6,5 +6,12 @@
   <label for="time-of-flight">Time:</label>
   <input id="time-of-flight" type="number" name="time">
 
+  <label for="ship-id">Ship:</label>
+    <select class="" name="ship_id">
+      <% @ships.each do |ship| %>
+        <option value=<%= ship.id %>><%= ship.name %></option>
+      <% end %>
+    </select>
+
   <input type="submit" value="Submit New Deal">
 </form>

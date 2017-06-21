@@ -1,6 +1,6 @@
 <h1>Lost-in-space Deals</h1>
 
-<div class="content">
+<div class="indexcontent">
   <% @trip_array.each_with_index do |trip, index| %>
     <p>Deal: <%= @deals[index].name %></p>
     <p>Space Craft: <%= trip[:ship].name %></p>
