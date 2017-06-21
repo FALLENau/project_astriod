@@ -12,6 +12,11 @@ get "/" do
   erb(:"deals/index")
 end
 
+# SHOW
+get '/deals/:id' do
+  @deal = Deal.find(params["id"].to_i())
+  erb(:"deals/show")
+end
 
 #NEW = gets info from making new deal for admin
 get "/deals/new" do

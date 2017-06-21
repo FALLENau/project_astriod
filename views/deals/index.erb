@@ -3,17 +3,16 @@
 <div class="indexcontent">
   <table>
     <tr>
-      <th>Link to deal</th>
       <th>Discount</th>
       <th>Name</th>
       <th>Day</th>
       <th>Spacecraft</th>
       <th>Time</th>
       <th>Price</th>
+      <th>Link to deal</th>
     </tr>
   <% @deals.each do |deal|  %>
   <tr>
-  <th><a href="deals/<%= deal.id %>">SHOW ME THE DEAL</a></th>
   <th><%= deal.price_mod %>% off</th>
   <th><%= deal.name %></th>
   <th><%= deal.day().name %></th>
@@ -22,6 +21,7 @@
       <th><%= trip[:flight].time %></th>
       <th><%= trip[:flight].price %></th>
     <% end %>
+    <th><a href="deals/<%= deal.id %>">SHOW ME THE DEAL</a></th>
   </tr>
 <% end %>
 </table>

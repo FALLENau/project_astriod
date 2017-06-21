@@ -14,18 +14,13 @@ a:hover {
 }
 
 .indexcontent {
-  /*display: flex;
-  flex-direction: column;*/
-  background-color: #333;
+  /*background-color: #333;*/
 }
 
-.indexcontent p{
-  /*display: none;*/
-
+.deal_show {
+    background-color: #333;
+    max-width: 500px;
 }
-
-/*@media (min-width: 480px) {.indexcontent
-  { flex-direction: row;}}*/
 
 .fixed-bg{
   background-repeat: no-repeat;
@@ -44,6 +39,7 @@ nav {
   height: 40px;
 }
 nav ul li{
+  padding: inherit;
   text-decoration: none;
   display: inline-block;
 }

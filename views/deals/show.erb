@@ -1,0 +1,13 @@
+<!-- show -->
+
+<div class="deal_show">
+  <p><%= @deal.price_mod %>% off</p>
+  <p><%= @deal.name %></p>
+  <p><%= @deal.day().name %></p>
+  <% Deal.all_details(@deal.id).each do |trip| %>
+    <p><%= trip[:ship].name %></p>
+    <p><img class="SpaceShips" src="<%= trip[:ship].url %>" alt=""></p>
+    <p>Departure Time: <%= trip[:flight].time %></p>
+    <p>Flight Cost(with out discount): <%= trip[:flight].price %></p>
+  <% end %>
+</div>

@@ -4,9 +4,9 @@
    <input id="name-of-deal" type="text" name="name">
 
    <label for="price-mod-select">Discount:</label>
-   <select id="price-mod-select" name="price_mod_id">
+   <select id="price-mod-select" name="price_mod">
      <% @deals.each do |deal| %>
-       <option value=<%= deal.id %>><%= deal.price_mod%></option>
+       <option value=<%= deal.price_mod %>><%= deal.price_mod%></option>
        <% end %>
    </select>
 
