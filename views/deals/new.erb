@@ -3,6 +3,12 @@
    <label for="name-of-deal">Deal Name:</label>
    <input id="name-of-deal" type="text" name="name">
 
+   <label for="price-mod-select">Discount:</label>
+   <select id="price-mod-select" name="price_mod_id">
+     <% @deals.each do |deal| %>
+       <option value=<%= deal.id %>><%= deal.price_mod%></option>
+       <% end %>
+   </select>
 
    <label for="ship-select">Ship:</label>
    <select id="ship-select" name="ship_id">

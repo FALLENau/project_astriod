@@ -10,7 +10,7 @@ class Deal
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @day_id = options['day_id'].to_i
-    @price_mod = options['price_mod'].to_i
+    @price_mod = options['price_mod'].to_f
   end
 
   def save

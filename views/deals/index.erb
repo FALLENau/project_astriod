@@ -1,17 +1,28 @@
 <h1>Lost-in-space Deals</h1>
 
 <div class="indexcontent">
+  <table>
+    <tr>
+      <th>Link to deal</th>
+      <th>Discount</th>
+      <th>Name</th>
+      <th>Day</th>
+      <th>Spacecraft</th>
+      <th>Time</th>
+      <th>Price</th>
+    </tr>
   <% @deals.each do |deal|  %>
-  <p>price mod:<%= deal.price_mod %></p>
-  <p>deal: <%= deal.name %></p>
-  <p>Day: <%= deal.day().name %></p>
+  <tr>
+  <th><a href="deals/<%= deal.id %>">SHOW ME THE DEAL</a></th>
+  <th><%= deal.price_mod %>% off</th>
+  <th><%= deal.name %></th>
+  <th><%= deal.day().name %></th>
     <% Deal.all_details(deal.id).each do |trip| %>
-      <p>Space Craft: <%= trip[:ship].name %></p>
-      <p><img class="SpaceShips" src="<%= trip[:ship].url %>" alt=""></p>
-      <p>flight launch: <%= trip[:flight].time %></p>
-      <p>Total cost: <%= trip[:flight].price %></p>
+      <th><%= trip[:ship].name %></th>
+      <th><%= trip[:flight].time %></th>
+      <th><%= trip[:flight].price %></th>
     <% end %>
-
-  <hr>
+  </tr>
 <% end %>
+</table>
 </div>
