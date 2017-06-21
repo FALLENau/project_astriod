@@ -10,7 +10,7 @@ require_relative '../models/flight_deal.rb'
 #INDEX = get '/deals_ect'
 get "/flight_deals" do
   @deals = Deal.all()
-  @trip_array = Deal.all_details
+  #@trip_array = Deal.all_details
   erb(:"deals/index")
 end
 

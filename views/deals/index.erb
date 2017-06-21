@@ -1,13 +1,17 @@
 <h1>Lost-in-space Deals</h1>
 
 <div class="indexcontent">
-  <% @trip_array.each_with_index do |trip, index| %>
-    <p>Deal: <%= @deals[index].name %></p>
-    <p>Space Craft: <%= trip[:ship].name %></p>
-    <p><img class="SpaceShips" src="<%= trip[:ship].url %>" alt=""></p>
-    <p>flight launch: <%= trip[:flight].time %></p>
-    <p>Total cost: <%= trip[:flight].price %></p>
-    <p>Day: <%= @deals[index].day().name %></p>
-    <hr>
+  <% @deals.each do |deal|  %>
+  <p>price mod:<%= deal.price_mod %></p>
+  <p>deal: <%= deal.name %></p>
+  <p>Day: <%= deal.day().name %></p>
+    <% Deal.all_details(deal.id).each do |trip| %>
+      <p>Space Craft: <%= trip[:ship].name %></p>
+      <p><img class="SpaceShips" src="<%= trip[:ship].url %>" alt=""></p>
+      <p>flight launch: <%= trip[:flight].time %></p>
+      <p>Total cost: <%= trip[:flight].price %></p>
+    <% end %>
+
+  <hr>
 <% end %>
 </div>

@@ -22,7 +22,7 @@ company VARCHAR(255)
 CREATE TABLE flights
 (
 id SERIAL8 PRIMARY KEY,
-price INT4,
+price FLOAT(2),
 time INT4,
 ship_id INT8 REFERENCES ships(id)
 );
@@ -31,8 +31,8 @@ CREATE TABLE deals
 (
 id SERIAL8 PRIMARY KEY,
 name VARCHAR(255),
-day_id INT8 REFERENCES days(id)--,
--- price_mod NUMERIC
+day_id INT8 REFERENCES days(id),
+price_mod FLOAT8
 );
 
 CREATE TABLE flight_deals
