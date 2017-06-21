@@ -1,6 +1,6 @@
 body {
   color: orange;
-
+  margin-top: 0px;
   text-align: center;
 }
 
@@ -34,9 +34,11 @@ a:hover {
 }
 
 nav {
+
   background-color: #333;
+  height: 40px;
 }
-nav ul li{  
+nav ul li{
   text-decoration: none;
   display: inline-block;
 }
