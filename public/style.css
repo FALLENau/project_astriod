@@ -16,9 +16,7 @@ p {
 }
 
 .fixed-bg{
-  background-size: cover;
   background-repeat: no-repeat;
-  background-size: 100%;
   background: black url('/images/background.jpg');
   background-attachment: fixed;
 }

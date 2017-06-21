@@ -15,7 +15,7 @@ end
 
 
 #NEW = gets info from making new deal for admin
-get "/new" do
+get "deals/new" do
   @days = Day.all
   @ships = Ship.all
   @flights = Flight.all
