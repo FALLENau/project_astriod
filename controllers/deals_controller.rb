@@ -5,6 +5,7 @@ require_relative '../models/deal.rb'
 require_relative '../models/flight.rb'
 require_relative '../models/ship.rb'
 require_relative '../models/day.rb'
+require_relative '../models/flight_deal'
 
 #INDEX = get '/deals_ect'
 get "/" do
@@ -12,7 +13,7 @@ get "/" do
   erb(:"deals/index")
 end
 
-# SHOW
+# SHOW works great
 get '/deals/:id' do
   @deal = Deal.find(params["id"].to_i())
   erb(:"deals/show")
