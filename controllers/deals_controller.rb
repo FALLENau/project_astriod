@@ -13,12 +13,6 @@ get "/" do
   erb(:"deals/index")
 end
 
-# SHOW works great
-get '/deals/:id' do
-  @deal = Deal.find(params["id"].to_i())
-  erb(:"deals/show")
-end
-
 #NEW = gets info from making new deal for admin
 get "/deals/new" do
   @deals = Deal.all
@@ -26,6 +20,13 @@ get "/deals/new" do
   @ships = Ship.all
   erb(:"deals/new")
 end
+
+# SHOW works great
+get '/deals/:id' do
+  @deal = Deal.find(params["id"].to_i())
+  erb(:"deals/show")
+end
+
 
 #CREATE = create new deal by admin
 post "/deals" do #note: changed /deal to /deals
