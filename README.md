@@ -18,3 +18,5 @@ Possible Extensions:
 	•	Add a price to a burger and add a savings amount/percentage to a deal so it's clear how much Jarrod is saving
 	•	Any other ideas you might come up with
 
+Also test place for git block_push
+	1.git remote set-url --push origin no_push
