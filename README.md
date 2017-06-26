@@ -20,3 +20,4 @@ Possible Extensions:
 
 Also test place for git block_push
 	1.git remote set-url --push origin no_push
+ how about now?
